@@ -1,0 +1,15 @@
+.bienvenido-right{
+    margin-right: 30px;
+}
+.margen{
+    margin-left: 7px;
+}
+@media screen and (max-width:991px){
+    .menu{
+        background-color: rgba(52, 58, 64,0.3);
+        border: 0;
+    }
+    .menu a{
+        color: whitesmoke;
+    }
+}
