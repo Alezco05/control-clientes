@@ -1,1 +1,58 @@
-<p>configuracion works!</p>
+<header id="main-header" class="py-2 bg-info text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          <fa-icon [icon]="faWrench"></fa-icon
+          ><span class="margen">Configuracion</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+<section id="actions" class="py-4 mb-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <a [routerLink]="['/']" class="btn btn-light btn-block">
+          <fa-icon [icon]="faArrowLeft"></fa-icon
+          ><span class="margen">Configuracion</span>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <button
+          type="submit"
+          (click)="guardar()"
+          class="btn btn-success btn-block">
+          <fa-icon [icon]="faCheck"></fa-icon>
+          <span class="margen">Guardar Cambios</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="configuracion">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h4>Editar Configuracion</h4>
+          </div>
+          <div class="card-body">
+            <fieldset class="form-group">
+              <legend>Permitir Registro Usuarios</legend>
+            </fieldset>
+            <div class="form-check">
+              <label for="" class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="permitirRegistro" [(ngModel)]="permitirRegistro"
+                [checked]="permitirRegistro"/>{{permitirRegistro?"Sí":"No"}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

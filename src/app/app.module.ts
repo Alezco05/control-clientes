@@ -28,6 +28,8 @@ import { PiePaginaComponent } from './components/pie-pagina/pie-pagina.component
 import { ClienteService } from './services/cliente.service';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './components/guardines/auth.guard';
+import { ConfiguracionService } from './services/configuracion.service';
+import { ConfiguracionGuard } from './components/guardines/configuracion.guard';
 
 
 
@@ -55,7 +57,7 @@ import { AuthGuard } from './components/guardines/auth.guard';
     FlashMessagesModule.forRoot()
 
   ],
-  providers: [ClienteService,LoginService,AuthGuard],
+  providers: [ClienteService,LoginService,AuthGuard,ConfiguracionService,ConfiguracionGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

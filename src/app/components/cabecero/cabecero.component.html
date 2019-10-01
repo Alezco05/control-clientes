@@ -49,7 +49,7 @@
               ><span class="margen">Login</span>
           </a>
         </li>
-        <li class="nav-item" *ngIf="!isLoggedIn">
+        <li class="nav-item" *ngIf="!isLoggedIn && permitirRegistro">
           <a routerLink="/registro" class="nav-link"  routerLinkActive="router-link-active">
             <fa-icon [icon]="faUserPlus"></fa-icon
               ><span class="margen">Registro</span>
