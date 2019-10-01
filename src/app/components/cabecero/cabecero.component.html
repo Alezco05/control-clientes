@@ -14,14 +14,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item active" *ngIf="isLoggedIn">
           <a class="nav-link" routerLink="/"
             >Inicio <span class="sr-only">(current)</span></a
           >
         </li>
       </ul>
       <ul class="navbar-nav ml-auto bienvenido-right">
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" *ngIf="isLoggedIn">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -31,7 +31,7 @@
             aria-expanded="false"
           >
             <fa-icon [icon]="faUser"></fa-icon>
-            <span class="margen">Bienvenido</span>
+            <span class="margen">Bienvenido {{loggenInUser}}</span>
           </a>
           <div
             class="dropdown-menu menu"
@@ -42,11 +42,23 @@
               ><span class="margen">Configuración</span>
             </a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/login" class="nav-link">
+        </li> 
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a routerLink="/login" class="nav-link" routerLinkActive="router-link-active">
             <fa-icon [icon]="faSignInAlt"></fa-icon
               ><span class="margen">Login</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a routerLink="/registro" class="nav-link"  routerLinkActive="router-link-active">
+            <fa-icon [icon]="faUserPlus"></fa-icon
+              ><span class="margen">Registro</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a style="cursor: pointer" (click)="logout()" class="nav-link">
+            <fa-icon [icon]="faSignOutAlt"></fa-icon
+              ><span class="margen">Salir</span>
           </a>
         </li>
       </ul>
